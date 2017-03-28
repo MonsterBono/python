@@ -1,0 +1,16 @@
+import cv2
+
+img = '2.jpg'
+
+txt = '4'
+font = cv2.FONT_HERSHEY_COMPLEX
+color = (255,0,0)
+
+def add_txt(img, txt, font, color):
+    img = cv2.imread(img)
+    y,x =  img.shape[0:2]
+    cv2.putText(img, txt, (x*3/4,y/4),font,4, color, thickness = 4, lineType = 8)
+    cv2.imshow('img',img)
+    cv2.waitKey(0)
+
+add_txt(img, txt, font, color)
